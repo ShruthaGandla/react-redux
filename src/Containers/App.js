@@ -1,8 +1,12 @@
+
+//this is a smart component i.e. it is connected to the redux and aware of the state.Smart components are called containers
 import React from "react";
 import {connect} from "react-redux";
 
-import { User } from './User';
-import { Main } from './Main';
+import { User } from "../Components/User";
+import { Main } from "../Components/Main";
+
+import {setName} from "../Actions/userActions"
 
 class App extends React.Component {
     render() {
@@ -20,7 +24,7 @@ class App extends React.Component {
 const mapStateToProps = (state) => {
   return {
       user: state.user,
-      math: state.math
+      number: state.number
   };
 };
 
@@ -29,10 +33,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         setName: (name) => {
-            dispatch({
-                type: "SET_NAME",
-                payload: name
-            });
+            dispatch(setName(name));
         }
     };
 };

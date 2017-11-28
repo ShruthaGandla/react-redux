@@ -1,7 +1,10 @@
+
+//Since this is a dumb component we dont need class extends and we can just make a const function 
+//and export it.It simply returns an html ,no need to render
 import React from "react";
 
-export class User extends React.Component {
-    render() {
+export const User = (props) => {
+    
         return (
             <div>
                 <div className="row">
@@ -11,11 +14,11 @@ export class User extends React.Component {
                 </div>
                 <div className="row">
                     <div className="col-xs-12">
-                        <p>User Name: {this.props.username}</p>
+                        <p>User Name: {props.username}</p>
                     </div>
                 </div>
             </div>
         );
-    }
-}
+};
+
 
